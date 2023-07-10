@@ -30,3 +30,11 @@ input, button{
   margin: auto;
   border-radius: 5px;
 }
+
+div{
+  margin-bottom: 30px;
+}
+
+span{
+  color: red;
+}

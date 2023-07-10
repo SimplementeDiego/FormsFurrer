@@ -1,32 +1,33 @@
 <div class="formcontainer">
   <h1>{{ title }}</h1>
-  <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <form [formGroup]="registerForm" (ngSubmit)="loginUser()" autocomplete="off">
     <input type="text" placeholder="Name" formControlName="user" />
-    <span *ngIf="user && user.invalid && user.touched" style="color: red"
+    <span *ngIf="user && user.invalid && user.touched"
       >Name must contain only letters and cannot be empty</span
     >
 
     <input type="email" placeholder="Email" formControlName="email" />
-    <span *ngIf="email && email.invalid && email.touched" style="color: red"
+    <span *ngIf="email && email.invalid && email.touched"
       >Email is not valid</span
     >
 
-    <input type="numeric" placeholder="Phone" formControlName="number" />
-    <span *ngIf="number && number.invalid && number.touched" style="color: red"
+    <input type="numeric" placeholder="Phone" formControlName="number"/>
+    <span *ngIf="number && number.invalid && number.touched"
       >Phone must only contain only numbers</span
     >
 
     <input type="password" placeholder="Password" formControlName="password" />
     <span
       *ngIf="password && password.invalid && password.touched"
-      style="color: red"
       >Password must be at least 5 characters</span
     >
 
-    <button [disabled]="loginForm.invalid">Login</button>
+    <button [disabled]="registerForm.invalid">Login</button>
   </form>
+  <div *ngIf="register">¡Registro Correcto!</div>
   <div class="valores">
     <h5>Valores</h5>
-    <pre>{{ loginForm.value | json }}</pre>
+    <pre>{{ registerForm.value | json }}</pre>
+
   </div>
 </div>

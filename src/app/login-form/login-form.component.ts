@@ -9,36 +9,46 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
 export class LoginFormComponent {
   title = 'Register Reactive Forms';
 
-  loginForm = new FormGroup({
+  register = false;
+
+  registerForm = new FormGroup({
     user: new FormControl('', [
       Validators.required,
       Validators.pattern('[a-zA-Z ]*'),
     ]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    number: new FormControl('', [Validators.pattern('[[0-9]+]')]),
+    number: new FormControl('', [Validators.pattern('[- +()0-9]+')]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(5),
     ]),
   });
 
-  loginUser() {
-    console.warn(this.loginForm.value);
-  }
+  delay = (ms:any) => new Promise(res => setTimeout(res, ms));
+
+  loginUser = async () => {
+
+    console.warn(this.registerForm.value);
+    this.register = true;
+    await this.delay(5000);
+    this.register = false;
+
+  };
 
   get user() {
-    return this.loginForm.get('user');
+    return this.registerForm.get('user');
   }
 
   get password() {
-    return this.loginForm.get('password');
+    return this.registerForm.get('password');
   }
 
   get email() {
-    return this.loginForm.get('email');
+    return this.registerForm.get('email');
   }
 
   get number() {
-    return this.loginForm.get('number');
+    return this.registerForm.get('number');
   }
+
 }

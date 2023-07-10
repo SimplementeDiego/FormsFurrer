@@ -11,6 +11,11 @@
       >Email is not valid</span
     >
 
+    <input type="numeric" placeholder="Phone" formControlName="number" />
+    <span *ngIf="number && number.invalid && number.touched" style="color: red"
+      >Phone must only contain only numbers</span
+    >
+
     <input type="password" placeholder="Password" formControlName="password" />
     <span
       *ngIf="password && password.invalid && password.touched"
@@ -18,11 +23,10 @@
       >Password must be at least 5 characters</span
     >
 
-    <input type="numeric" placeholder="Phone" formControlName="number" />
-    <span *ngIf="number && number.invalid && number.touched" style="color: red"
-      >Phone must only contain only numbers</span
-    >
-
     <button [disabled]="loginForm.invalid">Login</button>
   </form>
+  <div class="valores">
+    <h5>Valores</h5>
+    <pre>{{ loginForm.value | json }}</pre>
+  </div>
 </div>

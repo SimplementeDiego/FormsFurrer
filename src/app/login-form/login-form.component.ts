@@ -7,19 +7,19 @@ import {FormGroup, FormControl, Validators} from '@angular/forms';
   styleUrls: ['./login-form.component.css'],
 })
 export class LoginFormComponent {
-  title = 'Login Reactive Forms';
+  title = 'Register Reactive Forms';
 
   loginForm = new FormGroup({
     user: new FormControl('', [
       Validators.required,
       Validators.pattern('[a-zA-Z ]*'),
     ]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    number: new FormControl('', [Validators.pattern('[[0-9]+]')]),
     password: new FormControl('', [
       Validators.required,
       Validators.minLength(5),
     ]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    number: new FormControl('', [Validators.pattern('[[0-9]+]')]),
   });
 
   loginUser() {

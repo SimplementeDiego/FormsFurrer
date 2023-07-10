@@ -23,3 +23,10 @@ h1{
 input, button{
   padding: 5px;
 }
+
+.valores{
+  background-color: aquamarine;
+  width: fit-content;
+  margin: auto;
+  border-radius: 5px;
+}

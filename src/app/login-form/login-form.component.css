@@ -1,0 +1,25 @@
+
+.formcontainer{
+  width: 500px;
+  text-align: center;
+  background-color: beige;
+  padding: 50px;
+  border-radius: 10px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  height: 300px;
+  justify-content: space-around;
+}
+
+h1{
+  margin-bottom: 30px;
+}
+
+input, button{
+  padding: 5px;
+}

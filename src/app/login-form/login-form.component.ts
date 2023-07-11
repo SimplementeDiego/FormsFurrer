@@ -32,6 +32,7 @@ export class LoginFormComponent {
     this.register = true;
     await this.delay(5000);
     this.register = false;
+    this.registerForm.reset();
 
   };
 
